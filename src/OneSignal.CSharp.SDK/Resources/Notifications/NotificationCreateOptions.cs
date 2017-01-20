@@ -52,6 +52,12 @@ namespace OneSignal.CSharp.SDK.Resources.Notifications
 		public IList<INotificationFilter> Filters { get; set; }
 
         /// <summary>
+        /// Send based on OneSignal PlayerIds  
+        /// </summary>
+        [JsonProperty("include_player_ids")]
+		public IList<string> IncludePlayerIds { get; set; }
+
+        /// <summary>
         /// The segment names you want to target. 
         /// Users in these segments will receive a notification. 
         /// This targeting parameter is only compatible with excluded_segments.
