@@ -65,16 +65,6 @@ namespace OneSignal.CSharp.SDK.Resources.Notifications
         [JsonProperty("included_segments")]
         public IList<string> IncludedSegments { get; set; }
 
-        /// <summary>
-        ///  Recommended - Specific players to send your notification to.Does not require API Auth Key.         
-        /// Do not combine with other targeting parameters. Not compatible with any other targeting 
-        /// parameters.Example: ["1dd608f2-c6a1-11e3-851d-000c2940e62c"]         
-        /// Limit of 2,000 entries per REST API call
-        /// </summary>
-        [JsonProperty("include_player_ids")]
-        public IList<string> IncludePlayerIds { get; set; }
-
-
         ///<summary>
         /// Schedule notification for future delivery.
         ///Examples: All examples are the exact same date & time.
