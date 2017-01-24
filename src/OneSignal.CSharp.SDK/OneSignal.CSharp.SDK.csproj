@@ -57,6 +57,7 @@
     <Compile Include="Resources\BaseResource.cs" />
     <Compile Include="Resources\Devices\DeviceAddOptions.cs" />
     <Compile Include="Resources\Devices\DeviceAddResult.cs" />
+    <Compile Include="Resources\Devices\DeviceEditOptions.cs" />
     <Compile Include="Resources\Devices\DevicesResource.cs" />
     <Compile Include="Resources\Devices\DeviceTypeEnum.cs" />
     <Compile Include="Resources\Devices\TestTypeEnum.cs" />
@@ -69,6 +70,9 @@
     <Compile Include="Resources\Devices\IDevicesResource.cs" />
     <Compile Include="Resources\Notifications\NotificationsResource.cs" />
     <Compile Include="Serializers\NewtonsoftJsonSerializer.cs" />
+    <Compile Include="Resources\Notifications\NotificationFilterField.cs" />
+    <Compile Include="Resources\Notifications\INotificationFilter.cs" />
+    <Compile Include="Resources\Notifications\NotificationFilterOperator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
