@@ -22,12 +22,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
+    <DebugType>none</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DebugSymbols>false</DebugSymbols>
+    <DocumentationFile>bin\Release\OneSignal.CSharp.SDK.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
@@ -57,11 +59,16 @@
     <Compile Include="Resources\Devices\DeviceTypeEnum.cs" />
     <Compile Include="Resources\Devices\TestTypeEnum.cs" />
     <Compile Include="Resources\LanguageCodes.cs" />
+    <Compile Include="Resources\Notifications\ActionButtonField.cs" />
+    <Compile Include="Resources\Notifications\AndroidBackgroundLayoutField.cs" />
+    <Compile Include="Resources\Notifications\CustomConverters.cs" />
+    <Compile Include="Resources\Notifications\Enums.cs" />
     <Compile Include="Resources\Notifications\INotificationsResource.cs" />
     <Compile Include="Resources\Notifications\NotificationCreateOptions.cs" />
     <Compile Include="Resources\Notifications\NotificationCreateResult.cs" />
     <Compile Include="Resources\Devices\IDevicesResource.cs" />
     <Compile Include="Resources\Notifications\NotificationsResource.cs" />
+    <Compile Include="Resources\Notifications\WebButtonField.cs" />
     <Compile Include="Serializers\NewtonsoftJsonSerializer.cs" />
     <Compile Include="Resources\Notifications\NotificationFilterField.cs" />
     <Compile Include="Resources\Notifications\INotificationFilter.cs" />
