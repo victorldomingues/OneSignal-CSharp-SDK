@@ -90,7 +90,13 @@ namespace OneSignal.CSharp.SDK.Resources.Notifications
             token.WriteTo(writer);
         }
 
-        public override bool CanRead => true;
+        public override bool CanRead
+        {
+            get
+            {
+                return true;
+            }
+        }
 
         public override bool CanConvert(Type objectType)
         {
