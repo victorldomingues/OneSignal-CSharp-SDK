@@ -1,4 +1,6 @@
-﻿using OneSignal.CSharp.SDK.Serializers;
+﻿using System;
+using System.Net;
+using OneSignal.CSharp.SDK.Serializers;
 using RestSharp;
 
 namespace OneSignal.CSharp.SDK.Resources.Notifications
@@ -24,6 +26,10 @@ namespace OneSignal.CSharp.SDK.Resources.Notifications
             if (restResponse.ErrorException != null)
             {
                 throw restResponse.ErrorException;
+            }
+            else if (restResponse.StatusCode != HttpStatusCode.OK && restResponse.Content != null)
+            {
+                throw new Exception(restResponse.Content);
             }
 
             return restResponse.Data;
