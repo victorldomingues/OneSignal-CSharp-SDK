@@ -25,8 +25,7 @@ namespace OneSignal.CSharp.SDK.Resources.Notifications
             bool isNullable = (Nullable.GetUnderlyingType(objectType) != null);
             var enumType = (Nullable.GetUnderlyingType(objectType) ?? objectType);
             if (!enumType.IsEnum)
-                throw new JsonSerializationException($"type {enumType.FullName} is not a enum type");
-            var prefix = enumType.Name + "_";
+                throw new JsonSerializationException("Type " + enumType.FullName + " is not a enum type");
 
             if (reader.TokenType == JsonToken.Null)
             {
@@ -35,7 +34,6 @@ namespace OneSignal.CSharp.SDK.Resources.Notifications
                 return null;
             }
 
-            // Strip the prefix from the enum components (if any).
             var token = JToken.Load(reader);
             if (token.Type == JTokenType.String)
             {
