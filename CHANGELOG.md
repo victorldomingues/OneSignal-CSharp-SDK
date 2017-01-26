@@ -1,3 +1,7 @@
+### 0.8 2017-01-26
+
+ * Added xml documentation
+
 ### 0.7 2017-01-26
 
  * Create notification exception handling improvement
