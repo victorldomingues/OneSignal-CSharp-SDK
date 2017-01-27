@@ -22,7 +22,7 @@ namespace OneSignal.CSharp.SDK.Resources.Notifications
         /// Each hash must have a language code string for a key, mapped to the localized text you would like users to receive for that language.<br/>
         /// English must be included in the hash.<br/>
         /// <code>Example: {"en": "English Message", "es": "Spanish Message"}</code><br/>
-        /// See the language codes you can use here: <see cref="https://documentation.onesignal.com/docs/language-localization"/><br/>
+        /// See the language codes you can use <see cref="!:https://documentation.onesignal.com/docs/language-localization">here</see>.<br/>
         /// </summary>
         [JsonProperty("contents")]
         public IDictionary<string, string> Contents { get; set; }
@@ -32,7 +32,7 @@ namespace OneSignal.CSharp.SDK.Resources.Notifications
         /// Each hash must have a language code string for a key, mapped to the localized text you would like users to receive for that language.<br/>
         /// A default title may be displayed if a title is not provided. <br/>
         /// <code>Example: {"en": "English Title", "es": "Spanish Title"}</code><br/>
-        /// See the language codes you can use here: <see cref="https://documentation.onesignal.com/docs/language-localization"/> <br/>
+        /// See the language codes you can use <see cref="!:https://documentation.onesignal.com/docs/language-localization">here</see>. <br/>
         /// </summary>
         [JsonProperty("headings")]
         public IDictionary<string, string> Headings { get; set; }
@@ -40,7 +40,7 @@ namespace OneSignal.CSharp.SDK.Resources.Notifications
         /// <summary><br/>
         /// A custom map of data that is passed back to your app.<br/>
         /// <code>Example: {"abc": "123", "foo": "bar"}</code><br/>
-        /// See the language codes you can use here: https://documentation.onesignal.com/docs/frequently-asked-questions#section-what-languages-codes-can-i-use-<br/>
+        /// See the language codes you can use <see cref="!:https://documentation.onesignal.com/docs/language-localization">here</see>. <br/>
         /// </summary>
         [JsonProperty("data")]
         public IDictionary<string, string> Data { get; set; }
@@ -80,7 +80,7 @@ namespace OneSignal.CSharp.SDK.Resources.Notifications
         /// The notification's subtitle, a map of language codes to text for each language.<br/>
         /// Each hash must have a language code string for a key, mapped to the localized text you would like users to receive for that language. <br/>
         /// A default title may be displayed if a title is not provided.<br/>
-        /// This field supports inline substitutions: <see cref="https://documentation.onesignal.com/docs/notification-content#section-notification-content-substitution" /><br/>
+        /// This field supports <see cref="!:https://documentation.onesignal.com/docs/notification-content#section-notification-content-substitution">inline substitutions</see>.<br/>
         /// <code>Example: {"en": "English Subtitle", "es": "Spanish Subtitle"}</code><br/>
         /// Platforms: iOS 10+<br/>
         /// </summary>
@@ -115,7 +115,7 @@ namespace OneSignal.CSharp.SDK.Resources.Notifications
         /// <summary><br/>
         /// The URL to open in the browser when a user clicks on the notification.<br/>
         /// <code>Example: http://www.google.com</code><br/>
-        /// This field supports inline substitutions: <see cref="https://documentation.onesignal.com/docs/notification-content#section-notification-content-substitution" />.<br/>
+        /// This field supports<see cref="!:https://documentation.onesignal.com/docs/notification-content#section-notification-content-substitution">inline substitutions</see>.<br/>
         /// Platforms: ALL<br/>
         /// </summary>
         [JsonProperty("url")]
@@ -180,7 +180,7 @@ namespace OneSignal.CSharp.SDK.Resources.Notifications
 
         /// <summary><br/>
         /// Allowing setting a background image for the notification. This is a JSON object containing the following keys. <br/>
-        /// See our Background Image documentation for image sizes: <see cref="https://documentation.onesignal.com/docs/android-customizations#section-background-images" /><br/>
+        /// See our Background Image documentation for <see cref="!:https://documentation.onesignal.com/docs/android-customizations#section-background-images">image sizes</see>.<br/>
         /// image - Asset file, android resource name, or URL to remote image.<br/>
         /// headings_color - Title text color ARGB Hex format. <code>Example(Blue): "FF0000FF".</code><br/>
         /// contents_color - Body text color ARGB Hex format. <code>Example(Red): "FFFF0000"</code><br/>
@@ -192,7 +192,7 @@ namespace OneSignal.CSharp.SDK.Resources.Notifications
 
         /// <summary><br/>
         /// If blank the app icon is used. Must be the drawable resource name.<br/>
-        /// See how to create small icons: <see cref="https://documentation.onesignal.com/docs/android-customizations#section-small-notification-icons" /><br/>
+        /// See how to create small icons: <see cref="!:https://documentation.onesignal.com/docs/android-customizations#section-small-notification-icons" /><br/>
         /// Platforms: Android<br/>
         /// </summary>
         [JsonProperty("small_icon")]
@@ -200,7 +200,7 @@ namespace OneSignal.CSharp.SDK.Resources.Notifications
 
         /// <summary><br/>
         /// If blank the small_icon is used. Can be a drawable resource name or a URL.<br/>
-        /// See how to create large icons: <see cref="https://documentation.onesignal.com/docs/android-customizations#section-large-notification-icons" /><br/>
+        /// See how to <see cref="!:https://documentation.onesignal.com/docs/android-customizations#section-large-notification-icons">create large icons</see>.<br/>
         /// Platforms: Android<br/>
         /// </summary>
         [JsonProperty("large_icon")]
@@ -379,7 +379,7 @@ namespace OneSignal.CSharp.SDK.Resources.Notifications
 
         /// <summary><br/>
         /// All notifications with the same group will be stacked together using Android's Notification Stacking feature.<br/>
-        /// More info here: <see cref="https://developer.android.com/training/wearables/notifications/stacks.html" /><br/>
+        /// More info <see cref="!:https://developer.android.com/training/wearables/notifications/stacks.html">here</see>.<br/>
         /// Platforms: Android<br/>
         /// </summary>
         [JsonProperty("android_group")]
@@ -390,7 +390,7 @@ namespace OneSignal.CSharp.SDK.Resources.Notifications
         /// Include $[notif_count] in your message and it will be replaced with the current number.<br/>
         /// Languages - The value of each key is the message that will be sent to users for that language. "en" (English) is required.<br/>
         /// The key of each hash is either a a 2 character language code or one of zh-Hans/zh-Hant for Simplified or Traditional Chinese.<br/>
-        ///  Read about supported languages: <see cref="https://documentation.onesignal.com/docs/language-localization#section-supported-languages" /><br/>
+        ///  Read about <see cref="!:https://documentation.onesignal.com/docs/language-localization#section-supported-languages">supported languages</see>.<br/>
         /// <code>Example: {"en": "You have $[notif_count] new messages"}</code><br/>
         /// Platforms: Android<br/>
         /// </summary>
@@ -399,7 +399,7 @@ namespace OneSignal.CSharp.SDK.Resources.Notifications
 
         /// <summary><br/>
         /// All notifications with the same group will be stacked together using Android's Notification Stacking feature.<br/>
-        /// More info here: <see cref="https://developer.android.com/training/wearables/notifications/stacks.html" /><br/>
+        /// More info <see cref="!:https://developer.android.com/training/wearables/notifications/stacks.html">here</see>.<br/>
         /// Platforms: Amazon<br/>
         /// </summary>
         [JsonProperty("adm_group")]
@@ -458,7 +458,7 @@ namespace OneSignal.CSharp.SDK.Resources.Notifications
 
         /// <summary><br/>
         /// Does not support iOS Safari Indicates whether to send to all Apple's Safari desktop users registered under your Safari web push platform.<br/>
-        /// Read more about iOS Safari: <see cref="https://documentation.onesignal.com/docs/why-doesnt-web-push-work-with-ios" /><br/>
+        /// Read more about <see cref="!:https://documentation.onesignal.com/docs/why-doesnt-web-push-work-with-ios">iOS Safari</see>.<br/>
         /// Platforms: WEB<br/>
         /// </summary>
         [JsonProperty("isSafari")]
@@ -494,6 +494,10 @@ namespace OneSignal.CSharp.SDK.Resources.Notifications
         [JsonProperty("isChrome")]
         public bool? DeliverToChrome { get; set; }
 
+        /// <summary>
+        /// Default constructor that initializes empty Contents and Headings.
+        /// All other collection objects needs to be instantiated in order to be able to be serialized.
+        /// </summary>
         public NotificationCreateOptions()
         {
             Contents = new Dictionary<string, string>();
