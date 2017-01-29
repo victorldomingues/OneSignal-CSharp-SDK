@@ -4,10 +4,13 @@ using System.Collections.Generic;
 
 namespace OneSignal.CSharp.SDK.Resources.Devices
 {
+    /// <summary>
+    /// Options for adding new device to OneSignal app.
+    /// </summary>
     public class DeviceAddOptions
     {
         /// <summary>
-        /// Your OneSignal application ID, which can be found on our dashboard at onesignal.com under App Settings > Keys & IDs. 
+        /// Your OneSignal application ID, which can be found on our dashboard at onesignal.com under App Settings &gt; Keys &amp; IDs. 
         /// It is a UUID and looks similar to 8250eaf6-1a58-489e-b136-7c74a864b434.
         /// </summary>
         [JsonProperty("app_id")]

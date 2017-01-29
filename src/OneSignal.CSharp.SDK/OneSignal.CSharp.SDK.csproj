@@ -9,9 +9,8 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>OneSignal.CSharp.SDK</RootNamespace>
     <AssemblyName>OneSignal.CSharp.SDK</AssemblyName>
-    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -21,14 +20,17 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\OneSignal.CSharp.SDK.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
+    <DebugType>none</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DebugSymbols>false</DebugSymbols>
+    <DocumentationFile>bin\Release\OneSignal.CSharp.SDK.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
@@ -36,7 +38,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\RestSharp.105.2.3\lib\net46\RestSharp.dll</HintPath>
+      <HintPath>..\packages\RestSharp.105.2.3\lib\net452\RestSharp.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -50,10 +52,6 @@
     <Compile Include="IOneSignalClient.cs" />
     <Compile Include="OneSignalClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Resources\App\AppAddResult.cs" />
-    <Compile Include="Resources\App\AppCreateOptions.cs" />
-    <Compile Include="Resources\App\AppResource.cs" />
-    <Compile Include="Resources\App\IAppResource.cs" />
     <Compile Include="Resources\BaseResource.cs" />
     <Compile Include="Resources\Devices\DeviceAddOptions.cs" />
     <Compile Include="Resources\Devices\DeviceAddResult.cs" />
@@ -62,6 +60,10 @@
     <Compile Include="Resources\Devices\DeviceTypeEnum.cs" />
     <Compile Include="Resources\Devices\TestTypeEnum.cs" />
     <Compile Include="Resources\LanguageCodes.cs" />
+    <Compile Include="Resources\Notifications\ActionButtonField.cs" />
+    <Compile Include="Resources\Notifications\AndroidBackgroundLayoutField.cs" />
+    <Compile Include="Resources\Notifications\CustomConverters.cs" />
+    <Compile Include="Resources\Notifications\Enums.cs" />
     <Compile Include="Resources\Notifications\INotificationsResource.cs" />
     <Compile Include="Resources\Notifications\NotificationCancelOptions.cs" />
     <Compile Include="Resources\Notifications\NotificationCancelResult.cs" />
@@ -69,13 +71,16 @@
     <Compile Include="Resources\Notifications\NotificationCreateResult.cs" />
     <Compile Include="Resources\Devices\IDevicesResource.cs" />
     <Compile Include="Resources\Notifications\NotificationsResource.cs" />
+    <Compile Include="Resources\Notifications\WebButtonField.cs" />
     <Compile Include="Serializers\NewtonsoftJsonSerializer.cs" />
     <Compile Include="Resources\Notifications\NotificationFilterField.cs" />
     <Compile Include="Resources\Notifications\INotificationFilter.cs" />
     <Compile Include="Resources\Notifications\NotificationFilterOperator.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
