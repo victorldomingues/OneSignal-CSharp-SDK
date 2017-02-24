@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Globalization;
+using System.Collections.Generic;
 using System.Linq;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
@@ -283,7 +283,6 @@ namespace OneSignal.CSharp.SDK.Resources.Notifications
     }
     #endregion
 
-
     #region UnixDateTimeJsonConverter
     /// <summary>
     /// Converter used to serialize UnixDateTimeEnum as string.
@@ -397,5 +396,4 @@ namespace OneSignal.CSharp.SDK.Resources.Notifications
         }
     }
     #endregion
-
 }
