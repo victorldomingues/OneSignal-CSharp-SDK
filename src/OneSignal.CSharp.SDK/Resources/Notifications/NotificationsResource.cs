@@ -47,5 +47,33 @@ namespace OneSignal.CSharp.SDK.Resources.Notifications
 
             return restResponse.Data;
         }
+
+        /// <summary>
+        /// Get delivery and convert report about single notification.
+        /// </summary>
+        /// <param name="options">Options used for getting delivery and convert report about single notification.</param>
+        /// <returns></returns>
+        public NotificationViewResult View(NotificationViewOptions options)
+        {
+            var baseRequestPath = "notifications/{0}?app_id={1}";
+            
+            RestRequest restRequest = new RestRequest(string.Format(baseRequestPath, options.Id, options.AppId), Method.GET);
+
+            restRequest.RequestFormat = DataFormat.Json;
+            restRequest.JsonSerializer = new NewtonsoftJsonSerializer();
+
+            IRestResponse<NotificationViewResult> restResponse = base.RestClient.Execute<NotificationViewResult>(restRequest);
+
+            if (restResponse.ErrorException != null)
+            {
+                throw restResponse.ErrorException;
+            }
+            else if (restResponse.StatusCode != HttpStatusCode.OK && restResponse.Content != null)
+            {
+                throw new Exception(restResponse.Content);
+            }
+
+            return restResponse.Data;
+        }
     }
 }

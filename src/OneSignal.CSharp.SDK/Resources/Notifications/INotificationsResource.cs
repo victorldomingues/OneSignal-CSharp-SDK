@@ -11,5 +11,12 @@
         /// <param name="options">This parameter can contai variety of possible options used to create notification.</param>
         /// <returns>Returns result of notification create operation.</returns>
         NotificationCreateResult Create(NotificationCreateOptions options);
+
+        /// <summary>
+        /// Get report about notification
+        /// </summary>
+        /// <param name="options">This parameter can contai variety of possible options used to create notification.</param>
+        /// <returns>Returns result of notification create operation.</returns>
+        NotificationViewResult View(NotificationViewOptions options);
     }
 }
