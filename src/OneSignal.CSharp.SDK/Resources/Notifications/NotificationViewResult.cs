@@ -56,7 +56,6 @@ namespace OneSignal.CSharp.SDK.Resources.Notifications
         [JsonConverter(typeof(UnixDateTimeJsonConverter))]
         public int SendAfter { get; set; }
 
-
         /// <summary><br/>
         /// The URL to open in the browser when a user clicks on the notification.<br/>
         /// <code>Example: http://www.google.com</code><br/>
@@ -76,7 +75,7 @@ namespace OneSignal.CSharp.SDK.Resources.Notifications
         [JsonProperty("contents")]
         [JsonExtensionData]
         public Dictionary<string, string> Contents { get; set; }
-
+        
         /// <summary><br/>
         /// The notification's title, a map of language codes to text for each language.<br/>
         /// Each hash must have a language code string for a key, mapped to the localized text you would like users to receive for that language.<br/>

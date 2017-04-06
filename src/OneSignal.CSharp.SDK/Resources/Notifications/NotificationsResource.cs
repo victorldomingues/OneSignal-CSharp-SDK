@@ -81,7 +81,6 @@ namespace OneSignal.CSharp.SDK.Resources.Notifications
                 }
             }
 
-
             return restResponse.Data;
         }
     }

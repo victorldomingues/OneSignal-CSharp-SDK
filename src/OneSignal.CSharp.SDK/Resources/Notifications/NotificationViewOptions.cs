@@ -25,5 +25,6 @@ namespace OneSignal.CSharp.SDK.Resources.Notifications
         [JsonProperty("id")]
         public Guid Id { get; set; }
 
+
     }
 }
