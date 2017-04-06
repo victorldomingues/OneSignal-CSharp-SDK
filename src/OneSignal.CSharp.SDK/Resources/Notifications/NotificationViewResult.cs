@@ -74,7 +74,8 @@ namespace OneSignal.CSharp.SDK.Resources.Notifications
         /// See the language codes you can use <see cref="!:https://documentation.onesignal.com/docs/language-localization">here</see>.<br/>
         /// </summary>
         [JsonProperty("contents")]
-        public IDictionary<string, string> Contents { get; set; }
+        [JsonExtensionData]
+        public Dictionary<string, string> Contents { get; set; }
 
         /// <summary><br/>
         /// The notification's title, a map of language codes to text for each language.<br/>
@@ -84,7 +85,8 @@ namespace OneSignal.CSharp.SDK.Resources.Notifications
         /// See the language codes you can use <see cref="!:https://documentation.onesignal.com/docs/language-localization">here</see>. <br/>
         /// </summary>
         [JsonProperty("headings")]
-        public IDictionary<string, string> Headings { get; set; }
+        [JsonExtensionData]
+        public Dictionary<string, string> Headings { get; set; }
 
         /// <summary><br/>
         /// A custom map of data that is passed back to your app.<br/>
@@ -92,7 +94,8 @@ namespace OneSignal.CSharp.SDK.Resources.Notifications
         /// See the language codes you can use <see cref="!:https://documentation.onesignal.com/docs/language-localization">here</see>. <br/>
         /// </summary>
         [JsonProperty("data")]
-        public IDictionary<string, string> Data { get; set; }
+        [JsonExtensionData]
+        public Dictionary<string, string> Data { get; set; }
 
         /// <summary>
         /// The number of remaining devices where notification will be delivered

@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using System.IO;
+using Newtonsoft.Json;
 using RestSharp.Serializers;
 
 namespace OneSignal.CSharp.SDK.Serializers
@@ -64,7 +65,7 @@ namespace OneSignal.CSharp.SDK.Serializers
             _serializer = new Newtonsoft.Json.JsonSerializer
             {
                 MissingMemberHandling = MissingMemberHandling.Ignore,
-                NullValueHandling = NullValueHandling.Include,
+                NullValueHandling = NullValueHandling.Ignore,
                 DefaultValueHandling = DefaultValueHandling.Include
             };
         }

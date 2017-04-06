@@ -36,15 +36,18 @@ namespace OneSignal.CSharp.SDK.Resources.Notifications
 
             IRestResponse<NotificationCreateResult> restResponse = base.RestClient.Execute<NotificationCreateResult>(restRequest);
 
-            if (restResponse.ErrorException != null)
+            if (!(restResponse.StatusCode != HttpStatusCode.Created || restResponse.StatusCode != HttpStatusCode.OK))
             {
-                throw restResponse.ErrorException;
+                if (restResponse.ErrorException != null)
+                {
+                    throw restResponse.ErrorException;
+                }
+                else if (restResponse.StatusCode != HttpStatusCode.OK && restResponse.Content != null)
+                {
+                    throw new Exception(restResponse.Content);
+                }
             }
-            else if (restResponse.StatusCode != HttpStatusCode.OK && restResponse.Content != null)
-            {
-                throw new Exception(restResponse.Content);
-            }
-
+            
             return restResponse.Data;
         }
 
@@ -56,22 +59,28 @@ namespace OneSignal.CSharp.SDK.Resources.Notifications
         public NotificationViewResult View(NotificationViewOptions options)
         {
             var baseRequestPath = "notifications/{0}?app_id={1}";
-            
+
             RestRequest restRequest = new RestRequest(string.Format(baseRequestPath, options.Id, options.AppId), Method.GET);
+
+            restRequest.AddHeader("Authorization", string.Format("Basic {0}", base.ApiKey));
 
             restRequest.RequestFormat = DataFormat.Json;
             restRequest.JsonSerializer = new NewtonsoftJsonSerializer();
 
-            IRestResponse<NotificationViewResult> restResponse = base.RestClient.Execute<NotificationViewResult>(restRequest);
+            var restResponse = base.RestClient.Execute<NotificationViewResult>(restRequest);
 
-            if (restResponse.ErrorException != null)
+            if (!(restResponse.StatusCode != HttpStatusCode.Created || restResponse.StatusCode != HttpStatusCode.OK))
             {
-                throw restResponse.ErrorException;
+                if (restResponse.ErrorException != null)
+                {
+                    throw restResponse.ErrorException;
+                }
+                else if (restResponse.StatusCode != HttpStatusCode.OK && restResponse.Content != null)
+                {
+                    throw new Exception(restResponse.Content);
+                }
             }
-            else if (restResponse.StatusCode != HttpStatusCode.OK && restResponse.Content != null)
-            {
-                throw new Exception(restResponse.Content);
-            }
+
 
             return restResponse.Data;
         }
