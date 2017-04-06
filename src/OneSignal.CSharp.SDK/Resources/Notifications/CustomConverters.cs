@@ -137,6 +137,7 @@ namespace OneSignal.CSharp.SDK.Resources.Notifications
     }
     #endregion
 
+
     #region NotificationFilterFieldTypeConverter
     /// <summary>
     /// Converter used to serialize NotificationFilterFieldTypeEnum as string.

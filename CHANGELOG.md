@@ -1,3 +1,7 @@
+### 0.9 2017-01-27
+
+ * Completed missing XML documentation
+
 ### 0.8 2017-01-26
 
  * Added xml documentation
