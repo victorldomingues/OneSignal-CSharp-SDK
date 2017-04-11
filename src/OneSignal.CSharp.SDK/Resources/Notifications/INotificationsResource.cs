@@ -19,6 +19,7 @@ namespace OneSignal.CSharp.SDK.Resources.Notifications
         /// <returns>Returns result of notification cancel operation.</returns>
         NotificationCancelResult Cancel(NotificationCancelOptions options);
       
+        /// <summary>
         /// Get report about notification
         /// </summary>
         /// <param name="options">This parameter can contai variety of possible options used to create notification.</param>
