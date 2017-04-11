@@ -64,6 +64,8 @@
     <Compile Include="Resources\Notifications\CustomConverters.cs" />
     <Compile Include="Resources\Notifications\Enums.cs" />
     <Compile Include="Resources\Notifications\INotificationsResource.cs" />
+    <Compile Include="Resources\Notifications\NotificationCancelOptions.cs" />
+    <Compile Include="Resources\Notifications\NotificationCancelResult.cs" />
     <Compile Include="Resources\Notifications\NotificationCreateOptions.cs" />
     <Compile Include="Resources\Notifications\NotificationCreateResult.cs" />
     <Compile Include="Resources\Devices\IDevicesResource.cs" />
