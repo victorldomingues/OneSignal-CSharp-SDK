@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using System.IO;
+using Newtonsoft.Json;
 using RestSharp.Serializers;
 
 namespace OneSignal.CSharp.SDK.Serializers
@@ -8,6 +9,8 @@ namespace OneSignal.CSharp.SDK.Serializers
     /// </summary>
     public class NewtonsoftJsonSerializer : ISerializer
     {
+        private readonly Newtonsoft.Json.JsonSerializer _serializer;
+
         /// <summary>
         /// Content type.
         /// </summary>
@@ -39,21 +42,32 @@ namespace OneSignal.CSharp.SDK.Serializers
         /// <returns></returns>
         public string Serialize(object obj)
         {
-            return JsonConvert.SerializeObject(obj, Settings);
-        }
+            using (var stringWriter = new StringWriter())
+            {
+                using (var jsonTextWriter = new JsonTextWriter(stringWriter))
+                {
+                    jsonTextWriter.Formatting = Formatting.Indented;
+                    jsonTextWriter.QuoteChar = '"';
 
-        /// <summary>
-        /// Custom json serializer settings.
-        /// </summary>
-        private JsonSerializerSettings Settings;
+                    _serializer.Serialize(jsonTextWriter, obj);
+
+                    var result = stringWriter.ToString();
+                    return result;
+                }
+            }
+        }
 
         /// <summary>
         /// Default constructor that prevents null values to be serialized.
         /// </summary>
         public NewtonsoftJsonSerializer()
         {
-            Settings = new JsonSerializerSettings();
-            Settings.NullValueHandling = NullValueHandling.Ignore;
+            _serializer = new Newtonsoft.Json.JsonSerializer
+            {
+                MissingMemberHandling = MissingMemberHandling.Ignore,
+                NullValueHandling = NullValueHandling.Ignore,
+                DefaultValueHandling = DefaultValueHandling.Include
+            };
         }
     }
 }

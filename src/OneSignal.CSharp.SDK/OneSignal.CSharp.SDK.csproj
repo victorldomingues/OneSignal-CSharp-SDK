@@ -68,6 +68,8 @@
     <Compile Include="Resources\Notifications\NotificationCreateResult.cs" />
     <Compile Include="Resources\Devices\IDevicesResource.cs" />
     <Compile Include="Resources\Notifications\NotificationsResource.cs" />
+    <Compile Include="Resources\Notifications\NotificationViewOptions.cs" />
+    <Compile Include="Resources\Notifications\NotificationViewResult.cs" />
     <Compile Include="Resources\Notifications\WebButtonField.cs" />
     <Compile Include="Serializers\NewtonsoftJsonSerializer.cs" />
     <Compile Include="Resources\Notifications\NotificationFilterField.cs" />
