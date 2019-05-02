@@ -17,7 +17,7 @@ var client = new OneSignalClient("ZWM3YThlMmQtMzY1NC00ODI1LTlkYjMtMTk3MzI2OTQzMj
 
 var options = new NotificationCreateOptions();
 
-options.AppId = "089e4845-9849-4157-8b29-71e174af3abf";
+options.AppId = Guid.Parse("089e4845-9849-4157-8b29-71e174af3abf");
 options.IncludedSegments = new List<string> { "All" };
 options.Contents.Add(LanguageCodes.English, "Hello world!");
 
